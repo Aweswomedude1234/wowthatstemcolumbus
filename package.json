@@ -5,11 +5,11 @@
   "type": "module",
  "scripts": {
   "dev": "vite",
-  "build": "npx vite build",
+  "build": "chmod +x node_modules/.bin/vite && vite build",
   "build:dev": "npx vite build --mode development",
   "lint": "eslint .",
   "preview": "vite preview"
-  },
+},
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "^1.2.11",
