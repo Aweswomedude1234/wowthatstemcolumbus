@@ -616,7 +616,7 @@ export default function IndexPage() {
             
             <div style={styles.footerColumn}>
               <h3 style={styles.footerHeading}>About</h3>
-              <a href="/our-team" style={styles.footerLink}>Our Team</a>
+              <a href="/team" style={styles.footerLink}>Our Team</a>
               <a href="/join-us" style={styles.footerLink}>Join Us</a>
               <a href="/support-us" style={styles.footerLink}>Support Us</a>
             </div>

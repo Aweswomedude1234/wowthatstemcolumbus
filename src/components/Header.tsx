@@ -33,7 +33,7 @@ export default function Header() {
             )}
           </div>
 
-          <a href="/our-team" style={styles.navLink}>Our Team</a>
+          <a href="/team" style={styles.navLink}>Our Team</a>
           <a href="/join-us" style={styles.navLink}>Join Us</a>
           <a href="/support-us" style={styles.navLink}>Support Us</a>
         </div>
