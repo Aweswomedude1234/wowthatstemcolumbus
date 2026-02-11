@@ -1,7 +1,27 @@
 import React from 'react';
 
 export default function Header() {
-  const [dropdownOpen, setDropdownOpen] = React.useState(false);
+  const [programsOpen, setProgramsOpen] = React.useState(false);
+  const [aboutOpen, setAboutOpen] = React.useState(false);
+
+  const closeTimeout = React.useRef<number | null>(null);
+
+  const handleMouseEnter = (setter: (val: boolean) => void) => {
+    if (closeTimeout.current) {
+      window.clearTimeout(closeTimeout.current);
+      closeTimeout.current = null;
+    }
+    // Close other dropdowns to ensure clean switching
+    if (setter === setProgramsOpen) setAboutOpen(false);
+    if (setter === setAboutOpen) setProgramsOpen(false);
+    setter(true);
+  };
+
+  const handleMouseLeave = (setter: (val: boolean) => void) => {
+    closeTimeout.current = window.setTimeout(() => {
+      setter(false);
+    }, 200);
+  };
 
   return (
     <nav style={styles.navbar}>
@@ -14,28 +34,46 @@ export default function Header() {
         </div>
 
         <div style={styles.navMenu}>
-          {/* FIXED DROPDOWN WRAPPER */}
+          {/* MAIN LINKS */}
+          <a href="/" style={styles.navLink}>Home</a>
+          <a href="/upcoming-events" style={styles.navLink}>Upcoming Events</a>
+
+          {/* OUR PROGRAMS DROPDOWN */}
           <div
             style={styles.dropdownWrapper}
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
+            onMouseEnter={() => handleMouseEnter(setProgramsOpen)}
+            onMouseLeave={() => handleMouseLeave(setProgramsOpen)}
           >
             <span style={styles.navLink}>Our Programs</span>
-
-            {dropdownOpen && (
+            {programsOpen && (
               <div style={styles.dropdownContent}>
                 <a href="/invention-convention" style={styles.dropdownLink}>Invention Convention</a>
                 <a href="/chess-club" style={styles.dropdownLink}>Chess Club</a>
                 <a href="/summer-robotics" style={styles.dropdownLink}>Summer Robotics</a>
                 <a href="/cad-impact" style={styles.dropdownLink}>CAD For Impact</a>
-                <a href="/upcoming-events" style={styles.dropdownLink}>Upcoming Events</a>
               </div>
             )}
           </div>
 
-          <a href="/team" style={styles.navLink}>Our Team</a>
-          <a href="/join-us" style={styles.navLink}>Join Us</a>
-          <a href="/support-us" style={styles.navLink}>Support Us</a>
+          {/* ABOUT US DROPDOWN */}
+          <div
+            style={styles.dropdownWrapper}
+            onMouseEnter={() => handleMouseEnter(setAboutOpen)}
+            onMouseLeave={() => handleMouseLeave(setAboutOpen)}
+          >
+            <span style={styles.navLink}>About Us</span>
+            {aboutOpen && (
+              <div style={styles.dropdownContent}>
+                <a href="/about" style={styles.dropdownLink}>About WOW STEM</a>
+                <a href="/team" style={styles.dropdownLink}>Our Team</a>
+                <a href="/impact" style={styles.dropdownLink}>Our Impact</a>
+                <a href="/join" style={styles.dropdownLink}>Join Us</a>
+              </div>
+            )}
+          </div>
+
+          {/* STANDALONE SUPPORT US LINK */}
+          <a href="/donate" style={styles.supportButton}>Support Us</a>
         </div>
       </div>
     </nav>
@@ -78,11 +116,11 @@ const styles: { [key: string]: React.CSSProperties } = {
     fontSize: '1.2rem',
     fontWeight: 'bold',
     color: '#000',
-    fontFamily: "'Britannica Bold', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+    fontFamily: "'Britannica Bold', sans-serif",
   },
   navMenu: {
     display: 'flex',
-    gap: '2rem',
+    gap: '4.5rem', // Large spacing between items
     alignItems: 'center',
   },
   navLink: {
@@ -90,14 +128,23 @@ const styles: { [key: string]: React.CSSProperties } = {
     color: '#000',
     fontWeight: 900,
     cursor: 'pointer',
-    fontFamily: "'Britannica Bold', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+    fontFamily: "'Britannica Bold', sans-serif",
+    fontSize: '1rem',
   },
-
-  /* 🔹 NEW wrapper, no visual change */
+  supportButton: {
+    textDecoration: 'none',
+    color: '#000',
+    fontWeight: 900,
+    fontFamily: "'Britannica Bold', sans-serif",
+    fontSize: '1rem',
+    backgroundColor: '#FDB515', // Signature Yellow
+    padding: '0.6rem 1.2rem',
+    borderRadius: '50px',
+    transition: 'transform 0.2s ease',
+  },
   dropdownWrapper: {
     position: 'relative',
   },
-
   dropdownContent: {
     position: 'absolute',
     top: '100%',
@@ -108,6 +155,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     marginTop: '0.5rem',
     minWidth: '220px',
     zIndex: 1001,
+    borderRadius: '8px',
   },
   dropdownLink: {
     display: 'block',

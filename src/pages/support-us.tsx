@@ -1,6 +1,10 @@
 import React from 'react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export default function SupportUs() {
+  const [dropdownOpen, setDropdownOpen] = React.useState(false);
+
   return (
     <>
       <style>{`
@@ -34,21 +38,8 @@ export default function SupportUs() {
         }
       `}</style>
 
-      {/* Navigation */}
-      <nav style={styles.navbar}>
-        <div style={styles.navContainer}>
-          <div style={styles.logoContainer}>
-            <a href="/" style={styles.logoLink}>
-              <img 
-                src="/image1.png" 
-                alt="Logo" 
-                style={styles.logoImage}
-              />
-              <div style={styles.logoText}>WOW That's STEM Columbus</div>
-            </a>
-          </div>
-        </div>
-      </nav>
+      {/* Header */}
+      <Header dropdownOpen={dropdownOpen} setDropdownOpen={setDropdownOpen} />
 
       {/* Main Content */}
       <main style={styles.main}>
@@ -112,87 +103,12 @@ export default function SupportUs() {
       </main>
 
       {/* Footer */}
-      <footer style={styles.footer}>
-        <div style={styles.footerContainer}>
-          <div style={styles.footerTop}>
-            <div style={styles.footerColumn}>
-              <img 
-                src="/image1.png" 
-                alt="WOW That's STEM Columbus"
-                style={styles.footerLogo}
-              />
-              <p style={styles.footerText}>Founded in 2025</p>
-            </div>
-            
-            <div style={styles.footerColumn}>
-              <h3 style={styles.footerHeading}>Quick Links</h3>
-              <a href="/invention-convention" style={styles.footerLink}>Invention Convention</a>
-              <a href="/chess-club" style={styles.footerLink}>Chess Club</a>
-              <a href="/summer-robotics" style={styles.footerLink}>Summer Robotics</a>
-              <a href="/cad-impact" style={styles.footerLink}>CAD For Impact</a>
-              <a href="/upcoming-events" style={styles.footerLink}>Upcoming Events</a>
-            </div>
-            
-            <div style={styles.footerColumn}>
-              <h3 style={styles.footerHeading}>About</h3>
-              <a href="/team" style={styles.footerLink}>Our Team</a>
-              <a href="/join-us" style={styles.footerLink}>Join Us</a>
-              <a href="/support-us" style={styles.footerLink}>Support Us</a>
-            </div>
-            
-            <div style={styles.footerColumn}>
-              <h3 style={styles.footerHeading}>Connect</h3>
-              <a href="https://www.facebook.com/profile.php?id=61587270806398" target="_blank" rel="noopener noreferrer" style={styles.footerLink}>Facebook</a>
-              <a href="https://www.instagram.com/wowthatstem.columbus/" target="_blank" rel="noopener noreferrer" style={styles.footerLink}>Instagram</a>
-              <a href="https://www.linkedin.com/company/wowthatstemcolumbus/?viewAsMember=true" target="_blank" rel="noopener noreferrer" style={styles.footerLink}>LinkedIn</a>
-              <a href="mailto:columbusOH@wowthatstem.org" style={styles.footerLink}>Email Us</a>
-            </div>
-          </div>
-          
-          <div style={styles.footerBottom}>
-            <p style={styles.footerCopyright}>© 2025 WOW That's STEM Columbus. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
 
 const styles: { [key: string]: React.CSSProperties } = {
-  navbar: {
-    position: 'fixed',
-    top: 0,
-    width: '100%',
-    backgroundColor: 'white',
-    boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
-    zIndex: 1000,
-    padding: '1rem 0',
-  },
-  navContainer: {
-    maxWidth: '1400px',
-    margin: '0 auto',
-    padding: '0 2rem',
-  },
-  logoContainer: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  logoLink: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '1rem',
-    textDecoration: 'none',
-  },
-  logoImage: {
-    width: '50px',
-    height: '50px',
-  },
-  logoText: {
-    fontSize: '1.2rem',
-    fontWeight: 'bold',
-    color: '#000',
-    fontFamily: "'Britannica Bold', 'Helvetica Neue', Helvetica, Arial, sans-serif",
-  },
   main: {
     minHeight: '100vh',
     paddingTop: '120px',
@@ -281,60 +197,5 @@ const styles: { [key: string]: React.CSSProperties } = {
     flex: 1,
     textAlign: 'center',
     minWidth: '200px',
-  },
-  footer: {
-    padding: '4rem 2rem 2rem',
-    backgroundColor: '#000',
-    color: '#fff',
-  },
-  footerContainer: {
-    maxWidth: '1400px',
-    margin: '0 auto',
-  },
-  footerTop: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-    gap: '3rem',
-    marginBottom: '3rem',
-  },
-  footerColumn: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '1rem',
-  },
-  footerLogo: {
-    width: '80px',
-    height: '80px',
-    marginBottom: '1rem',
-  },
-  footerHeading: {
-    fontSize: '1.2rem',
-    fontWeight: 900,
-    fontFamily: "'Britannica Bold', 'Helvetica Neue', Helvetica, Arial, sans-serif",
-    marginBottom: '0.5rem',
-  },
-  footerLink: {
-    color: '#fff',
-    textDecoration: 'none',
-    fontSize: '1rem',
-    fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-    transition: 'color 0.3s ease',
-    opacity: 0.8,
-  },
-  footerText: {
-    color: '#fff',
-    fontSize: '0.95rem',
-    fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-    opacity: 0.8,
-  },
-  footerBottom: {
-    borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-    paddingTop: '2rem',
-    textAlign: 'center',
-  },
-  footerCopyright: {
-    fontSize: '0.9rem',
-    fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-    opacity: 0.6,
   },
 };

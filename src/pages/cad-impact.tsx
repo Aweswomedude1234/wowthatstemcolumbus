@@ -40,7 +40,7 @@ export default function CADImpactPage() {
 
           <div style={styles.content}>
             <p style={styles.paragraph}>
-              Our CAD For Impact program teaches students how to use professional design software to create solutions for real-world problems. Through hands-on workshops and project-based learning, students develop technical skills while working on meaningful community projects.
+              Our CAD For Impact program teaches high school students how to use professional design software to create solutions for real-world problems. Through hands-on workshops and project-based learning, students develop technical skills while working on meaningful community projects.
             </p>
             <p style={styles.paragraph}>
               Whether you're interested in engineering, architecture, product design, or just want to learn a valuable skill, this program will help you turn your ideas into reality.

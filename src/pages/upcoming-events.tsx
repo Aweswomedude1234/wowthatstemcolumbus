@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../components/Header'; // ✅ ADDED
 
 export default function UpcomingEvents() {
   const events = [
@@ -14,14 +15,16 @@ export default function UpcomingEvents() {
     },
     {
       title: "Business Camp",
-      date: "Coming Soon",
-      description: "Free business and entrepreneurship workshop for students.",
+      date: "February 15th",
+      description: "Business and entrepreneurship workshop for 4th-8th Grade students.",
       link: "https://forms.gle/KWUkZkfMh9EptuCd9"
     }
   ];
 
   return (
     <>
+      <Header /> {/* ✅ ADDED */}
+
       <style>{`
         @import url('https://fonts.cdnfonts.com/css/britannica-bold');
         
@@ -52,22 +55,6 @@ export default function UpcomingEvents() {
           color: #000 !important;
         }
       `}</style>
-
-      {/* Navigation Bar */}
-      <nav style={styles.navbar}>
-        <div style={styles.navContainer}>
-          <div style={styles.logoContainer}>
-            <a href="/" style={styles.logoLink}>
-              <img 
-                src="/image1.png" 
-                alt="Logo" 
-                style={styles.logoImage}
-              />
-              <div style={styles.logoText}>WOW That's STEM Columbus</div>
-            </a>
-          </div>
-        </div>
-      </nav>
 
       {/* Main Content */}
       <main style={styles.main}>
@@ -155,7 +142,9 @@ export default function UpcomingEvents() {
           </div>
           
           <div style={styles.footerBottom}>
-            <p style={styles.footerCopyright}>© 2025 WOW That's STEM Columbus. All rights reserved.</p>
+            <p style={styles.footerCopyright}>
+              © 2025 WOW That's STEM Columbus. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
