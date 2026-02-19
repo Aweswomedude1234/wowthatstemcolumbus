@@ -5,8 +5,9 @@ export default function UpcomingEvents() {
   const events = [
     {
       title: "Dominoes Fundraiser",
-      date: "February 14th",
-      description: "Support WOW That's STEM Columbus while enjoying delicious Domino's pizza!"
+      date: "February 14th-28th",
+      description: "Support WOW That's STEM Columbus while enjoying delicious Domino's pizza! One 20 Dollar Card can get you Free large Pizzas with every large pizza you buy for the rest of the year!",
+      link: "https://store.dominos.cards/53118/"
     },
     {
       title: "Online Panda Express Fundraiser",
@@ -14,11 +15,12 @@ export default function UpcomingEvents() {
       description: "Order online and a portion of proceeds will support our programs."
     },
     {
-      title: "Business Camp",
-      date: "February 15th",
-      description: "Business and entrepreneurship workshop for 4th-8th Grade students.",
+      title: "Invention Convention Mentoring Session",
+      date: "February 22th",
+      description: "We are offering assistance and free mentoring sessions for students K-12 for the Invention Convention.",
       link: "https://forms.gle/KWUkZkfMh9EptuCd9"
     }
+  
   ];
 
   return (

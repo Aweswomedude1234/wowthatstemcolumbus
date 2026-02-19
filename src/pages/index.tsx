@@ -214,7 +214,7 @@ export default function IndexPage() {
       {/* Our Partners and Sponsors Section */}
       <section style={styles.partnersSection}>
         <div style={styles.partnersContainer}>
-          <h2 style={styles.partnersTitle}>Our Partners and Sponsors</h2>
+          <h2 style={styles.partnersTitle}>Our Community Partners and Generous Donors</h2>
           <div style={styles.partnersLogosWrapper}>
             <div style={styles.partnersLogosScroller}>
               <div style={styles.partnersLogosTrack} className="partners-scroll">
@@ -320,8 +320,8 @@ export default function IndexPage() {
             Upcoming Events
           </h2>
           <ul data-fade="events-list" className={`fade-in ${visibleSections.has('events-list') ? 'visible' : ''}`} style={styles.eventsList}>
-            <li style={styles.eventItem}>Business Camp - February 15th</li>
-            <li style={styles.eventItem}>Dominoes Fundraiser - February 14th</li>
+            <li style={styles.eventItem}>Invention Convention Mentoring Sessoin - February 22th</li>
+            <li style={styles.eventItem}>Dominoes Fundraiser - February 14th-28th</li>
             <li style={styles.eventItem}>Online Panda Express Fundraiser - February 27th</li>
           </ul>
         </div>
