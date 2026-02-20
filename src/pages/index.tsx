@@ -18,6 +18,22 @@ export default function IndexPage() {
     '/partner5.png',
   ];
 
+  // Testimonials - Easily edit text and star ratings here
+  const testimonials = [
+    {
+      stars: 5,
+      text: "My child really enjoyed the hands-on activities and interactive parts of the workshop. They liked being able to participate, ask questions, and work with other students instead of just listening the whole time."
+    },
+    {
+      stars: 5,
+      text: "WOW That's STEM is doing an amazing job. The camps are wonderful and had a very positive impact on my son. They motivated him to learn more about STEM, AI, and chess. We truly appreciate your efforts."
+    },
+    {
+      stars: 5,
+      text: "Wow That STEM! program offering AI, coding, and chess camps has been incredibly valuable for my kids. They’re genuinely enjoying every session, and it’s amazing to see them learning cutting‑edge AI concepts and coding skills at such a young age. I truly appreciate the team’s effort in hosting such meaningful and well‑organized STEM camps. Thank you so much for creating this opportunity for our children!"
+    }
+  ];
+
   useEffect(() => {
     // Loading animation
     const timer = setTimeout(() => {
@@ -327,18 +343,32 @@ export default function IndexPage() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials Section (Updated to Carousel) */}
       <section style={styles.sectionAlt}>
         <div style={styles.container}>
           <h2 data-fade="test-title" className={`fade-in ${visibleSections.has('test-title') ? 'visible' : ''}`} style={styles.sectionTitle}>
             Testimonials
           </h2>
-          <div style={styles.testimonialsGrid}>
-            <div data-fade="test-1" className={`fade-in ${visibleSections.has('test-1') ? 'visible' : ''}`} style={styles.testimonialBox}>
-              "WOW That's STEM is doing an amazing job. The camps are wonderful and had a very positive impact on my son. They motivated him to learn more about STEM, AI, and chess. We truly appreciate your efforts."
-            </div>
-            <div data-fade="test-2" className={`fade-in ${visibleSections.has('test-2') ? 'visible' : ''}`} style={styles.testimonialBox}>
-              "Wow That STEM! program offering AI, coding, and chess camps has been incredibly valuable for my kids. They're genuinely enjoying every session..."
+          <div data-fade="test-carousel" className={`fade-in ${visibleSections.has('test-carousel') ? 'visible' : ''}`} style={styles.partnersLogosWrapper}>
+            <div style={styles.partnersLogosScroller}>
+              <div style={styles.partnersLogosTrack} className="partners-scroll">
+                {testimonials.map((t, index) => (
+                  <div key={`test-first-${index}`} style={styles.testimonialBox}>
+                    <div style={styles.stars}>
+                      {"★".repeat(t.stars)}{"☆".repeat(5 - t.stars)}
+                    </div>
+                    "{t.text}"
+                  </div>
+                ))}
+                {testimonials.map((t, index) => (
+                  <div key={`test-second-${index}`} style={styles.testimonialBox}>
+                    <div style={styles.stars}>
+                      {"★".repeat(t.stars)}{"☆".repeat(5 - t.stars)}
+                    </div>
+                    "{t.text}"
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           <div data-fade="test-button" className={`fade-in ${visibleSections.has('test-button') ? 'visible' : ''}`} style={styles.buttonContainer}>
@@ -412,7 +442,8 @@ const styles: { [key: string]: React.CSSProperties } = {
   whatWeDoItemLarge: { fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, fontFamily: "'Britannica Bold', sans-serif", lineHeight: 1.2, transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)', position: 'relative' },
   highlightPill: { backgroundColor: '#FDB515', padding: '0.2em 0.5em', borderRadius: '100px', display: 'inline-block' },
   testimonialsGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '3rem' },
-  testimonialBox: { backgroundColor: 'white', padding: '2rem', borderRadius: '12px', fontSize: 'clamp(1rem, 2vw, 1.2rem)', lineHeight: 1.6, fontFamily: "'Helvetica Neue', sans-serif", fontStyle: 'italic', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)' },
+  testimonialBox: { backgroundColor: 'white', padding: '2rem', borderRadius: '12px', fontSize: 'clamp(1rem, 2vw, 1.2rem)', lineHeight: 1.6, fontFamily: "'Helvetica Neue', sans-serif", fontStyle: 'italic', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)', minWidth: '350px', maxWidth: '400px', flexShrink: 0, whiteSpace: 'normal', display: 'flex', flexDirection: 'column' },
+  stars: { color: '#FDB515', fontSize: '1.5rem', marginBottom: '1rem', fontStyle: 'normal' },
   eventsList: { listStyle: 'none', padding: 0 },
   eventItem: { fontSize: '1.5rem', marginBottom: '1rem', fontFamily: "'Britannica Bold', sans-serif" },
   emailLink: { color: '#000', textDecoration: 'underline' }
