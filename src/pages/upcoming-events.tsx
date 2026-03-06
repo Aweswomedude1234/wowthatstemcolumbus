@@ -134,7 +134,7 @@ export default function UpcomingEvents() {
           
           <div style={styles.footerBottom}>
             <p style={styles.footerCopyright}>
-              © 2025 WOW That's STEM Columbus. All rights reserved.
+              
             </p>
           </div>
         </div>

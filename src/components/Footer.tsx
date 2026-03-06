@@ -62,7 +62,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-white/10 py-4 text-center text-xs text-white/50">
-        © {new Date().getFullYear()} WOW That’s STEM Columbus
+        WOW That's STEM Columbus Chapter
       </div>
     </footer>
   );
