@@ -40,11 +40,11 @@ export default function IndexPage() {
       setLoading(false);
     }, 2000);
 
-    // Load LightWidget script
+    // Load Behold widget script
     const script = document.createElement('script');
-    script.src = 'https://cdn.lightwidget.com/widgets/lightwidget.js';
-    script.async = true;
-    document.body.appendChild(script);
+    script.src = 'https://w.behold.so/widget.js';
+    script.type = 'module';
+    document.head.appendChild(script);
 
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -488,7 +488,8 @@ export default function IndexPage() {
             Follow Our Journey
           </h2>
           <div data-fade="insta-feed" className={`fade-in ${visibleSections.has('insta-feed') ? 'visible' : ''}`}>
-            <iframe src="//lightwidget.com/widgets/7dc024f6bd825319b34cef16153e0efa.html" scrolling="no" allowTransparency={true} className="lightwidget-widget" style={{ width: '100%', border: 0, overflow: 'hidden', minHeight: '400px' }} />
+            {/* Swapped to Behold Widget */}
+            <behold-widget feed-id="0CXGI7wqbDF9Bmo66ynB"></behold-widget>
           </div>
         </div>
       </section>
