@@ -47,7 +47,7 @@ export default function SupportUs() {
           <h1 style={styles.pageTitle}>Support Us</h1>
           
           <p style={styles.description}>
-            WOW That's STEM Columbus is a community-based nonprofit dedicated to expanding access to STEM education,
+            WOW That's STEM Columbus Chapter is a nonprofit chapter dedicated to expanding access to STEM education,
             artificial intelligence, business, coding, and chess for K–12 students across Central Ohio.
           </p>
 
