@@ -331,6 +331,28 @@ export default function IndexPage() {
             </div>
           </div>
         </div>
+
+        {/* NEW "Featured On" Section */}
+        <div style={{ ...styles.partnersContainer, marginTop: '4rem', borderTop: '1px solid #ccc', paddingTop: '3rem' }}>
+          <h2 style={{ ...styles.partnersTitle, fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', opacity: 0.8 }}>Featured On:</h2>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '3rem', flexWrap: 'wrap' }}>
+            {/* Add more logos here by duplicating this anchor tag */}
+            <a 
+              href="https://spectrumlocalnews.com/section/know-your-electeds/news/2026/03/01/stem-expo-" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{ transition: 'transform 0.3s ease', display: 'inline-block' }}
+              onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+              onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+            >
+              <img 
+                src="/image7.png" 
+                alt="Featured Logo" 
+                style={{ maxHeight: '500px', maxWidth: '180px', objectFit: 'contain' }} 
+              />
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* Who We Are Section */}
@@ -420,7 +442,7 @@ export default function IndexPage() {
           </h2>
           <ul data-fade="events-list" className={`fade-in ${visibleSections.has('events-list') ? 'visible' : ''}`} style={styles.eventsList}>
             <li style={styles.eventItem}>STEM Workshop - March 8th</li>
-           
+            
           </ul>
         </div>
       </section>
