@@ -10,7 +10,7 @@ const Footer = () => {
             WOW That’s STEM Columbus
           </h3>
           <p className="mt-3 text-sm text-white/70 max-w-sm">
-            A youth-led nonprofit empowering students through hands-on STEM
+            A youth-led nonprofit Chapter empowering students through hands-on STEM
             education, leadership, and innovation.
           </p>
         </div>

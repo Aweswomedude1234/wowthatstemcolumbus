@@ -21,7 +21,7 @@ export default function AboutUs() {
               of WOW That's STEM
             </h1>
             <p style={styles.description}>
-              A global nonprofit dedicated to breaking down barriers in technology, 
+              A  Nonprofit Chapter dedicated to breaking down barriers in technology, 
               engineering, and science for every student in our community.
             </p>
           </div>

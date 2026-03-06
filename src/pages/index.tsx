@@ -89,7 +89,7 @@ export default function IndexPage() {
       <div style={styles.loadingContainer}>
         <img 
           src="/image1.png" 
-          alt="WOW That's STEM Columbus"
+          alt="WOW That's STEM Columbus Chapter"
           style={styles.loadingLogo}
           className="spinning-logo"
         />
@@ -303,7 +303,7 @@ export default function IndexPage() {
               STEM WITHOUT<br />LIMITS
             </h1>
           </div>
-          <a href="#programs" className="btn-explore">
+          <a href="/upcoming-events" className="btn-explore">
             EXPLORE OUR FREE PROGRAMS
           </a>
         </div>
@@ -340,7 +340,7 @@ export default function IndexPage() {
             Who We Are
           </h2>
           <p data-fade="who-we-are" className={`fade-in ${visibleSections.has('who-we-are') ? 'visible' : ''}`} style={styles.whoWeAreStatement}>
-            WOW That's STEM Columbus is a <span className="highlight-box">youth-led</span> nonprofit organization advancing community-driven <span className="highlight-box">STEM education</span> through hands-on programs that inspire <span className="highlight-box">curiosity</span>, confidence, and leadership in students.
+            WOW That's STEM Columbus Chapter is a <span className="highlight-box">youth-led</span> Nonprofit Organization Chapter advancing community-driven <span className="highlight-box">STEM education</span> through hands-on programs that inspire <span className="highlight-box">curiosity</span>, confidence, and leadership in students.
           </p>
         </div>
       </section>

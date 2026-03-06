@@ -29,7 +29,7 @@ export default function Header() {
         <div style={styles.logoContainer}>
           <a href="/" style={styles.logoLink}>
             <img src="/image1.png" alt="Logo" style={styles.logoImage} />
-            <div style={styles.logoText}>WOW That's STEM Columbus</div>
+            <div style={styles.logoText}>WOW That's STEM Columbus Chapter</div>
           </a>
         </div>
 
