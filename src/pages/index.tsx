@@ -240,8 +240,8 @@ export default function IndexPage() {
 
         .hero-right {
           flex: 1;
-          /* You can swap this URL with your actual camp photo */
-          background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop');
+          /* Updated to call your local image */
+          background-image: url('/image10.png');
           background-size: cover;
           background-position: center;
           clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
