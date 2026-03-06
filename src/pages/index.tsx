@@ -198,33 +198,116 @@ export default function IndexPage() {
         .carousel-slide.active {
           opacity: 1;
         }
+
+        /* NEW HERO STYLES */
+        .hero-section {
+          display: flex;
+          height: 85vh;
+          min-height: 600px;
+          background-color: #000;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .hero-left {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          position: relative;
+          z-index: 2;
+          padding-left: 4rem;
+        }
+
+        .hero-yellow-shape {
+          background-color: #fdb515;
+          padding: 3rem 4rem 3rem 0;
+          margin-left: -4rem; 
+          padding-left: 4rem;
+          clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+          width: 120%;
+          margin-bottom: 2rem;
+        }
+
+        .hero-title {
+          font-size: clamp(3rem, 6vw, 5.5rem);
+          font-weight: 900;
+          color: #000;
+          line-height: 1;
+          letter-spacing: -0.02em;
+          font-family: 'Britannica Bold', 'Helvetica Neue', sans-serif;
+        }
+
+        .hero-right {
+          flex: 1;
+          /* You can swap this URL with your actual camp photo */
+          background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop');
+          background-size: cover;
+          background-position: center;
+          clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+          margin-left: -10%;
+        }
+
+        .btn-explore {
+          display: inline-block;
+          background-color: #000;
+          color: #fdb515;
+          border: 2px solid #fdb515;
+          padding: 1.25rem 3rem;
+          border-radius: 50px;
+          font-weight: 900;
+          font-size: 1.4rem;
+          text-decoration: none;
+          width: fit-content;
+          transition: all 0.3s ease;
+          font-family: 'Britannica Bold', 'Helvetica Neue', sans-serif;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-explore:hover {
+          background-color: #fdb515;
+          color: #000 !important;
+          transform: scale(1.05);
+        }
+
+        @media (max-width: 968px) {
+          .hero-section {
+            flex-direction: column;
+            height: auto;
+          }
+          .hero-left {
+            padding: 4rem 2rem;
+          }
+          .hero-yellow-shape {
+            width: 100%;
+            clip-path: none;
+            margin-left: -2rem;
+            padding-left: 2rem;
+          }
+          .hero-right {
+            height: 400px;
+            clip-path: none;
+            margin-left: 0;
+          }
+        }
       `}</style>
 
       {/* Replaced Navigation with shared Header */}
       <Header />
 
-      {/* Hero Section */}
-      <section style={styles.hero}>
-        <div style={styles.heroContent}>
-          <h1
-            style={{
-              ...styles.heroTextTop,
-              transform: `translateX(-${heroTransitionDistance * 2}px)`,
-              opacity: heroScrolled ? 0 : 1,
-            }}
-          >
-            WOW THAT'S STEM
-          </h1>
-          <h1
-            style={{
-              ...styles.heroTextBottom,
-              transform: `translateX(${heroTransitionDistance * 2}px)`,
-              opacity: heroScrolled ? 0 : 1,
-            }}
-          >
-            COLUMBUS
-          </h1>
+      {/* NEW Hero Section */}
+      <section className="hero-section">
+        <div className="hero-left">
+          <div className="hero-yellow-shape">
+            <h1 className="hero-title">
+              STEM WITHOUT<br />LIMITS
+            </h1>
+          </div>
+          <a href="#programs" className="btn-explore">
+            EXPLORE OUR FREE PROGRAMS
+          </a>
         </div>
+        <div className="hero-right"></div>
       </section>
 
       {/* Our Partners and Sponsors Section */}
@@ -294,14 +377,14 @@ export default function IndexPage() {
       <section style={styles.section}>
         <div style={styles.container}>
           <h2 data-fade="feb-title" className={`fade-in ${visibleSections.has('feb-title') ? 'visible' : ''}`} style={styles.sectionTitle}>
-            February
+            March
           </h2>
           <p data-fade="feb-desc" className={`fade-in ${visibleSections.has('feb-desc') ? 'visible' : ''}`} style={styles.sectionDescription}>
-            Explore our February camps and workshops. These opportunities are all free to kids. Sign up and find more information below.
+            Explore our March camps and workshops. These opportunities are all free to kids. Sign up and find more information below.
           </p>
           <div data-fade="feb-buttons" className={`fade-in ${visibleSections.has('feb-buttons') ? 'visible' : ''}`} style={styles.buttonContainer}>
-            <a href="https://forms.gle/KWUkZkfMh9EptuCd9" target="_blank" rel="noopener noreferrer" style={{...styles.ctaButton, marginRight: '1rem'}} className="cta-button">
-              Business Camp
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLPCca3XQ_SKnyu3Swox7Yh576KmjwrU8OvNfUsyN5Fc6LVQ/viewform?usp=pp_url&entry.1078865381=G0F5N3" target="_blank" rel="noopener noreferrer" style={{...styles.ctaButton, marginRight: '1rem'}} className="cta-button">
+              STEM Workshop
             </a>
             <a href="/upcoming-events" style={styles.ctaButton} className="cta-button">
               Upcoming Opportunities
@@ -336,9 +419,8 @@ export default function IndexPage() {
             Upcoming Events
           </h2>
           <ul data-fade="events-list" className={`fade-in ${visibleSections.has('events-list') ? 'visible' : ''}`} style={styles.eventsList}>
-            <li style={styles.eventItem}>Invention Convention Mentoring Sessoin - February 22th</li>
-            <li style={styles.eventItem}>Dominoes Fundraiser - February 14th-28th</li>
-            <li style={styles.eventItem}>Online Panda Express Fundraiser - February 27th</li>
+            <li style={styles.eventItem}>STEM Workshop - March 8th</li>
+           
           </ul>
         </div>
       </section>
