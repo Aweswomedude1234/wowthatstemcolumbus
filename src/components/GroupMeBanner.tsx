@@ -39,7 +39,7 @@ export default function GroupMeBanner() {
           >
             Join our GroupMe
           </a>{" "}
-          for February&apos;s free camps and workshops.
+          for March&apos;s free camps and workshops.
         </p>
         <button
           type="button"
